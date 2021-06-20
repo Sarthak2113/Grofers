@@ -36,4 +36,4 @@ You will get a CLI upon running the client side, which supports 4 operations:
 Golang for Server side and client side implementation
 Redis for storing the key value pair.
 ```
-> I used redis to since it is an in-memory data structure store, cache and message broker, with optional durability.
+> I used redis since it is an in-memory data structure store, cache and message broker, with optional durability.
