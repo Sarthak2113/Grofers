@@ -1,0 +1,28 @@
+
+version: '3'
+
+# Define services
+services:
+  app:
+    # Configuration for building the docker image for the service
+    image: sarthak321321/grofersapp
+    container_name: Server
+    ports:
+      - "1234:1234" # Forward the exposed port 1234 on the container to port 1234 on the host machine
+    restart: unless-stopped
+    depends_on: 
+      - redis # This service depends on redis. Start that first.
+    environment: # Pass environment variables to the service
+      REDIS_URL: redis:6379
+    links:
+        - redis
+
+  # Redis Service   
+  redis:
+    image: "redis:latest" # Use a public Redis image to build the redis service
+    container_name: redis
+    restart: unless-stopped
+    ports:
+        - "6379:6379" # Forward the exposed port 6379 on the container to port 6379 on the host machine
+
+# Networks to be created to facilitate communication between containers
