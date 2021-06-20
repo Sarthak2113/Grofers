@@ -18,9 +18,11 @@ Go to the downloaded assignment directory and then run the following command:
 
 Go to the downloaded directory and go to the Client sub directory.
 There run the following command:
+
 ``go build -o main .``
 
 Once the build is complete, run this command to start the client:
+
 ``./main 127.0.0.1:1234``
 
 ## Usage
